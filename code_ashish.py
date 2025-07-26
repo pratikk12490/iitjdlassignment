@@ -23,16 +23,23 @@ transform = transforms.Compose([
     transforms.ToTensor()
 ])
 
-# Datasets
-train_dataset = torchvision.datasets.MNIST(
-    root=local_mnist_path, train=True, transform=transform, download=True
-)
-test_dataset = torchvision.datasets.MNIST(
-    root=local_mnist_path, train=False, transform=transform, download=False
-)
+
+# # Dataset
+train_dataset = torchvision.datasets.MNIST(root='data', train=True, transform=transform, download=True)
+test_dataset = torchvision.datasets.MNIST(root='data', train=False, transform=transform, download=True)
 
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+# # Datasets
+# train_dataset = torchvision.datasets.MNIST(
+#     root=local_mnist_path, train=True, transform=transform, download=True
+# )
+# test_dataset = torchvision.datasets.MNIST(
+#     root=local_mnist_path, train=False, transform=transform, download=False
+# )
+
+# train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+# test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 # Encoder
 class Encoder(nn.Module):
