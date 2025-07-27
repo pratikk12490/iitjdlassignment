@@ -1,0 +1,3 @@
+# Ignore test.py and train.py in sparse_autoencoder folder
+sparse_autoencoder/test.py
+sparse_autoencoder/train.py
